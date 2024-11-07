@@ -58,7 +58,7 @@ export default function Home() {
     }
 
     let decimal: number
-    let conversionSteps: string[] = []
+    const conversionSteps: string[] = []
 
     // Convert input to decimal
     if (fromSystem === "decimal") {
@@ -133,7 +133,7 @@ export default function Home() {
   const decimalToBinarySteps = (decimal: number): string => {
     let steps = "To convert decimal to binary, we repeatedly divide by 2 and keep track of the remainders:\n\n"
     let quotient = decimal
-    let remainders = []
+    const remainders = []
     while (quotient > 0) {
       remainders.unshift(quotient % 2)
       steps += `${quotient} ÷ 2 = ${Math.floor(quotient / 2)} remainder ${quotient % 2}\n`
@@ -149,7 +149,7 @@ export default function Home() {
   const decimalToHexSteps = (decimal: number): string => {
     let steps = "To convert decimal to hexadecimal, we repeatedly divide by 16 and keep track of the remainders:\n\n"
     let quotient = decimal
-    let remainders = []
+    const remainders = []
     while (quotient > 0) {
       const remainder = quotient % 16
       remainders.unshift(remainder < 10 ? remainder.toString() : String.fromCharCode(55 + remainder))
